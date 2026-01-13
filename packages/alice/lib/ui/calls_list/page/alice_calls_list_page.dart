@@ -257,13 +257,9 @@ class _AliceCallsListPageState extends State<AliceCallsListPage>
         description: context
             .i18n(AliceTranslationKey.saveSuccessDescription)
             .replaceAll("[path]", result.path!),
-        secondButtonTitle:
-            OperatingSystem.isAndroid
-                ? context.i18n(AliceTranslationKey.saveSuccessView)
-                : null,
+                secondButtonTitle: context.i18n(AliceTranslationKey.saveSuccessView),
         secondButtonAction:
-            () =>
-                OperatingSystem.isAndroid ? OpenFilex.open(result.path!) : null,
+            () => OpenFilex.open(result.path!),
       );
     } else {
       final [String title, String description] = switch (result.error) {
