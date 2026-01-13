@@ -33,13 +33,14 @@ class AliceGeneralDialog {
                 firstButtonTitle ?? context.i18n(AliceTranslationKey.accept),
               ),
             ),
+            if (secondButtonTitle != null)
               TextButton(
                 onPressed: () {
                   // ignore: avoid_dynamic_calls
                   secondButtonAction?.call();
                   Navigator.of(context).pop();
-                },
-                child: Text(secondButtonTitle ?? context.i18n(AliceTranslationKey.callDetailsOverview)),
+                 },
+                  child: Text(secondButtonTitle),
               ),
           ],
         ),
